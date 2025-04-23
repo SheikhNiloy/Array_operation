@@ -14,7 +14,6 @@ void display(int arr[], int size) {
 
 
 int insert(int arr[], int size, int value, int position) {
-    // Check if array is full (max size is 100)
     if (size >= 100) {
         printf("Array is full, cannot insert more elements.\n");
         return size;
@@ -27,9 +26,9 @@ int insert(int arr[], int size, int value, int position) {
     for (int i = size; i > position; i--) {
         arr[i] = arr[i - 1];
     }
-    arr[position] = value; // Place the new value
+    arr[position] = value;
     size++;
-    display(arr, size); // Show updated array
+    display(arr, size);
     return size;
 }
 
@@ -51,12 +50,12 @@ void updatePosition(int arr[], int size, int fromPos, int toPos) {
     }
     int temp = arr[fromPos];
     if (fromPos < toPos) {
-        // Shift elements left between fromPos and toPos
+        
         for (int i = fromPos; i < toPos; i++) {
             arr[i] = arr[i + 1];
         }
     } else if (fromPos > toPos) {
-        // Shift elements right between toPos and fromPos
+        
         for (int i = fromPos; i > toPos; i--) {
             arr[i] = arr[i - 1];
         }
@@ -131,8 +130,6 @@ int main() {
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
-
-    // Menu loop
     while (1) {
         printf("\nMenu:\n");
         printf("1. Insert\n2. Update Value\n3. Update Position\n4. Delete\n5. Sort Ascending\n6. Sort Descending\n7. Search\n8. Display\n9. Exit\n");
