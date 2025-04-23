@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function to display the array
+
 void display(int arr[], int size) {
     if (size == 0) {
         printf("Array is empty.\n");
@@ -12,19 +12,18 @@ void display(int arr[], int size) {
     printf("\n");
 }
 
-// Function to insert a value at a position
+
 int insert(int arr[], int size, int value, int position) {
     // Check if array is full (max size is 100)
     if (size >= 100) {
         printf("Array is full, cannot insert more elements.\n");
         return size;
     }
-    // Check if position is valid
+  
     if (position < 0 || position > size) {
         printf("Invalid position!\n");
         return size;
     }
-    // Shift elements to the right from the end to the position
     for (int i = size; i > position; i--) {
         arr[i] = arr[i - 1];
     }
@@ -34,7 +33,7 @@ int insert(int arr[], int size, int value, int position) {
     return size;
 }
 
-// Function to update value at a position
+
 void updateValue(int arr[], int size, int position, int newValue) {
     if (position < 0 || position >= size) {
         printf("Invalid position for update!\n");
@@ -44,7 +43,7 @@ void updateValue(int arr[], int size, int position, int newValue) {
     display(arr, size);
 }
 
-// Function to move an element from one position to another
+
 void updatePosition(int arr[], int size, int fromPos, int toPos) {
     if (fromPos < 0 || fromPos >= size || toPos < 0 || toPos >= size) {
         printf("Invalid position to move!\n");
@@ -66,13 +65,13 @@ void updatePosition(int arr[], int size, int fromPos, int toPos) {
     display(arr, size);
 }
 
-// Function to delete an element at a position
+
 int deleteElement(int arr[], int size, int position) {
     if (position < 0 || position >= size) {
         printf("Invalid position to delete!\n");
         return size;
     }
-    // Shift elements left starting from position
+   
     for (int i = position; i < size - 1; i++) {
         arr[i] = arr[i + 1];
     }
@@ -81,7 +80,7 @@ int deleteElement(int arr[], int size, int position) {
     return size;
 }
 
-// Function to sort the array (bubble sort)
+
 void sort(int arr[], int size, int ascending) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
@@ -103,7 +102,7 @@ void sort(int arr[], int size, int ascending) {
     display(arr, size);
 }
 
-// Function to search for a value
+
 void search(int arr[], int size, int value) {
     int found = 0;
     for (int i = 0; i < size; i++) {
@@ -117,11 +116,11 @@ void search(int arr[], int size, int value) {
     }
 }
 
-// Main function with menu-driven interface
+
 int main() {
     int arr[100], size = 0, choice, value, position, fromPos, toPos;
 
-    // Get initial array size and elements
+   
     printf("Enter size (maximum 100): ");
     scanf("%d", &size);
     if (size > 100) {
@@ -172,11 +171,11 @@ int main() {
                 break;
 
             case 5:
-                sort(arr, size, 1); // Ascending
+                sort(arr, size, 1); 
                 break;
 
             case 6:
-                sort(arr, size, 0); // Descending
+                sort(arr, size, 0);
                 break;
 
             case 7:
